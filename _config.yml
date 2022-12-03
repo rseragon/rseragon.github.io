@@ -102,7 +102,7 @@ comments:
   giscus:
     repo: rseragon/rseragon.github.io        # <gh-username>/<repo>
     repo_id: R_kgDOIjNiHw
-    category: Q&A
+    category: General
     category_id: DIC_kwDOIjNiH84CS49n
     mapping:           # optional, default to 'pathname'
     input_position: top   # optional, default to 'bottom'
