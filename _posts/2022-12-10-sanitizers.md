@@ -68,6 +68,7 @@ int main() {
 
 Compiler output (Skip this output, read the explanation below it, and if you feel comfortable come back here!)
 ```console
+❯ clang++ outofbounds.cpp -fsanitize=address -g && ./a.out
 =================================================================
 ==903795==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000020 at pc 0x5564f9892dfe bp 0x7ffce60719d0 sp 0x7ffce60719c8
 WRITE of size 4 at 0x602000000020 thread T0
@@ -160,6 +161,7 @@ int main(int argc, char** argv) {
   // ...
 }
 ```
+{: file="uninited_data.cpp"}
 Now, if we look at the output
 ```console
 ❯ clang++ uninited_data.cpp -fsanitize=memory -g && ./a.out
@@ -228,6 +230,8 @@ int main() {
 	return 0;
 }
 ```
+{: file="data_race.cpp"}
+
 Output of it without any sanitizer
 Try 1
 ```console
