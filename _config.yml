@@ -5,118 +5,46 @@ theme: jekyll-theme-chirpy
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
-<<<<<<< HEAD
-# baseurl: '/rseragon.github.io'
-baseurl: ''
-||||||| 7fd15a2
-baseurl: ''
-=======
 baseurl: ""
->>>>>>> upstream/master
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
 lang: en
 
-<<<<<<< HEAD
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Kolkata
-||||||| 7fd15a2
-
-# Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
-=======
-# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone: Asia/Shanghai
->>>>>>> upstream/master
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 # TODO
 
-<<<<<<< HEAD
 title: Gizmo Blog                          # the main title
-||||||| 7fd15a2
-title: Chirpy                          # the main title
-=======
-title: Chirpy # the main title
->>>>>>> upstream/master
 
-<<<<<<< HEAD
 tagline: Blog on tech and realted stuff # it will display as the sub-title
-||||||| 7fd15a2
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
-=======
-tagline: A text-focused Jekyll theme # it will display as the sub-title
->>>>>>> upstream/master
 
-<<<<<<< HEAD
 description: >-                        # used by seo meta and the atom feed
   A tech and related based blog written by me :) 
-||||||| 7fd15a2
-description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
-=======
-description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
->>>>>>> upstream/master
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-<<<<<<< HEAD
 url: 'https://rseragon.github.io'
-||||||| 7fd15a2
-url: ''
-=======
-url: ""
->>>>>>> upstream/master
 
 github:
-<<<<<<< HEAD
   username: rseragon             # change to your github username
-||||||| 7fd15a2
-  username: github_username             # change to your github username
-=======
-  username: github_username # change to your github username
->>>>>>> upstream/master
 
-<<<<<<< HEAD
 # twitter:
 #   username: username            # change to your twitter username
-||||||| 7fd15a2
-twitter:
-  username: twitter_username            # change to your twitter username
-=======
-twitter:
-  username: twitter_username # change to your twitter username
->>>>>>> upstream/master
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-<<<<<<< HEAD
   name: rseragon
   email: example@example.com             # change to your email address
-||||||| 7fd15a2
-  name: your_full_name
-  email: example@domain.com             # change to your email address
-=======
-  name: your_full_name
-  email: example@domain.com # change to your email address
->>>>>>> upstream/master
   links:
     # The first element serves as the copyright owner's link
-<<<<<<< HEAD
     # - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/rseragon       # change to your github homepage
-||||||| 7fd15a2
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
-=======
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
->>>>>>> upstream/master
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -127,21 +55,11 @@ google_site_verification: # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-<<<<<<< HEAD
   id: G-XG1KMB7CN9                 # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
     cache_path:       # the local PV cache data, friendly to visitors from GFW region
-||||||| 7fd15a2
-  id:                 # fill in your Google Analytics ID
-  # Google Analytics pageviews report settings
-  pv:
-    proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
-    cache_path:       # the local PV cache data, friendly to visitors from GFW region
-=======
-  id: # fill in your Google Analytics ID
->>>>>>> upstream/master
 
 # Prefer color scheme setting.
 #
@@ -154,48 +72,24 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-<<<<<<< HEAD
 theme_mode:   # [light|dark]
 # theme_mode: dark
-||||||| 7fd15a2
-theme_mode:   # [light|dark]
-=======
-theme_mode: # [light|dark]
->>>>>>> upstream/master
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-<<<<<<< HEAD
 img_cdn: https://cdn.jsdelivr.net/gh/
-||||||| 7fd15a2
-img_cdn: 'https://demo-img.cotes.page'
-=======
-img_cdn: "https://chirpy-img.netlify.app"
->>>>>>> upstream/master
 
 # the avatar on sidebar, support local or CORS resources
-<<<<<<< HEAD
 avatar: https://avatars.githubusercontent.com/u/29054079
-||||||| 7fd15a2
-avatar: '/commons/avatar.jpg'
-=======
-avatar: "/commons/avatar.jpg"
->>>>>>> upstream/master
 
 # boolean type, the global switch for TOC in posts.
 toc: true
 
 comments:
-<<<<<<< HEAD
   active: giscus        # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
-||||||| 7fd15a2
-  active:         # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
-=======
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
->>>>>>> upstream/master
   # The active options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
@@ -205,7 +99,6 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-<<<<<<< HEAD
     repo: rseragon/rseragon.github.io        # <gh-username>/<repo>
     repo_id: R_kgDOIjNiHw
     category: General
@@ -213,23 +106,6 @@ comments:
     mapping:           # optional, default to 'pathname'
     input_position: top   # optional, default to 'bottom'
     lang:              # optional, default to the value of `site.lang`
-||||||| 7fd15a2
-    repo:              # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping:           # optional, default to 'pathname'
-    input_position:    # optional, default to 'bottom'
-    lang:              # optional, default to the value of `site.lang`
-=======
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
-    mapping: # optional, default to 'pathname'
-    input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
->>>>>>> upstream/master
     reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
