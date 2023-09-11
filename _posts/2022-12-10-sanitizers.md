@@ -145,7 +145,7 @@ One of the main agenda of this is to detect "uninitalized reads", in short
 it looks for non inited vars/memory, *innit mate?*
 
 Consider this example, (Though this program doesn't make any sense, just roll along with it)<br/>
-**NOTE:** This sample only works in clang(get version info)
+**NOTE:** This sample only works in clang(5.0+)
 ```c++
 #include <vector>
 #include <iostream>
