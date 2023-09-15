@@ -20,12 +20,12 @@ timezone: Asia/Kolkata
 # ↓ --------------------------
 # TODO
 
-title: Gizmo Blog                          # the main title
+title: Stygian Crypt # the main title
 
-tagline: Blog on tech and realted stuff # it will display as the sub-title
+tagline: A store for arcane gibberish # it will display as the sub-title 
 
 description: >-                        # used by seo meta and the atom feed
-  A tech and related based blog written by me :) 
+  A biased tech blog written by me ;)
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://rseragon.github.io'
