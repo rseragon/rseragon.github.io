@@ -24,7 +24,7 @@ to have have some of undetected bugs which surfaced with the help of these Sanit
 > Sanitizers are run-time/dynamic binary analyzers, which soak into the binary during compilation
 > and trigger when a certain flag or a condition is violated. These are very helpful in the detection
 > of elusive bugs which are hard to find. They are implemented thoroughly in Clang and GCC(pretty much)
-> and are considered to pretty stable.
+> and are considered to be stable.
 {: .prompt-info}
 Few of the sanitizers are
 
