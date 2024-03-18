@@ -6,6 +6,18 @@ tags: [Bun, NodeJs, Java]
 image: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/million/dia/servers.png
 ---
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="https://code.highcharts.com/dashboards/datagrid.js"></script>
+<script src="https://code.highcharts.com/dashboards/dashboards.js"></script>
+<script src="https://code.highcharts.com/dashboards/modules/layout.js"></script>
+<style type="text/css">
+  @import url("https://code.highcharts.com/css/highcharts.css");
+  @import url("https://code.highcharts.com/dashboards/css/dashboards.css");
+</style>
+
 ## Preface
 
 I once and for all wanna settle up this dispute. The dispute which has been bugging me 
@@ -34,14 +46,14 @@ This is where we fall in the pit. Java released in 1996, almost 28 years as of 2
 is around 4 GB[^32-bit], right now, with the advent of 64-bit processors the capacity has exponentially increased to 4PB[^64-bit].
 
 I would proclaim that solution built 3 decades ago aren't viable for problems that are present right now. So, to use a older paradigm 
-just because everyone is using it, is just like liviing in a delusion that an AI won't take over your job.
+just because everyone is using it, is just like living in a delusion that an AI won't take over your job.
 
 
 # Benching languages
 Now, enough of philosophy. Let's get our hands on the numbers. The numbers which decide the applicability of the current backend technologies.
 For the comparision, I've taken these four tech stacks. The factors that made me choose these are quite biased, but hear me out.
 
-1. **SpringBoot + Java**: I hate to say this, but a plethora of backend servers are written in this languages. And after giving a long ass speech about the philosophy of Java, I couldn't ignore this one.
+1. **SpringBoot + Java**: I hate to say this, but a plethora of backend servers are written in this language. And after giving a long ass speech about the philosophy of Java, I couldn't ignore this one.
 2. **ExpressJs  + Node**: If it weren't to be Java, its always Node. Not that I completely hate it, but I don't like it either. Nevertheless, it's quite ubiquitous.
 3. **Flask   +  Python**: This is one framework every python developer knows or heard of. It's easy to learn and quite straightforward to deploy.
 4. **Hono       +  Bun**: Bun has been in quite the popularity now. It's super-fast runtime is one of the main reason I wanted to do this benchmark.
@@ -50,16 +62,17 @@ But what about the other languages?
 Yes, languages like Golang, Rust are definitely an option. I'm just too time contrained to learn and deploy these languages. So, I put them on hold as of now, .
 
 ## How to test them?
-The initial problem was how should I test them? The solution I came up with was to simulate some kind of a login mechanism. Since, many big servers have to handle
+The initial problem was how should I test them?<br />
+The solution I came up with was to simulate some kind of a login mechanism. Since, many big servers have to handle
 thousands of logins at some instance of time, and if we were to bench that kind of implementation, we could reach to some kind of conclusion with the working of the server
 on this heavy threshold.
-This was the skeleton plan
+The Skeleton of the plan goes like this
 
 <img src="https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/million/dia/steps.png" />
 
-Wait. This has no corelation with the logic of logging in a user?!
+Wait. This has no corelation with the logic of logging in a user?!<br />
 If this is the query, then here is my answer. The first step, getting random bytes is analogous to retriving a hashed password from the server. The second step of generating
-a hash is not intuitive w.r.t to first step, but when we are loggin in a user, we try to generate a hash with the user input. This step is quite similar to that. And the step of 
+a hash is not intuitive w.r.t to first step, but when we are logging in a user, we try to generate a hash with the user input. This step is quite similar to that. And the step of 
 comparing two hashes, is something I've not implemented. Since it's an O(k) operation for comparing two hashes. I've left it out of this logic.
 
 
@@ -131,16 +144,6 @@ I had to manually SSH into the instance and rebuild the docker file to make it r
 
 ## Results
 Time for the long awaited results. 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-<script src="https://code.highcharts.com/dashboards/datagrid.js"></script>
-<script src="https://code.highcharts.com/dashboards/dashboards.js"></script>
-<script src="https://code.highcharts.com/dashboards/modules/layout.js"></script>
-<link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css">
-<link rel="stylesheet" href="https://code.highcharts.com/dashboards/css/dashboards.css">
-
 
 <div id="container"></div>
 
@@ -155,10 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
       ["Hono", 13.05, 2.02, 100000, 99279, 100000 - 99279],
     ]
 
-    const time = []
-    const cpuUsageData = [
-
-    ]
 Highcharts.setOptions({
     chart: {
         spacingTop: 20,
