@@ -150,13 +150,13 @@ Time for the long awaited results.
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const columnNames = ["Framework", "Average CPU utilization", "Time taken", "Total request sent", "Total successful requests", "Errors"]
+    const columnNames = ["Framework", "Average CPU utilization", "Time taken", "Total request sent", "Total successful requests", "Errors"];
     const data = [
       ["SpringBoot", 19.27, 3.36, 100000, 99335, 100000 - 99335],
       ["ExpressJs", 36.6, 2.2, 100000, 98703, 100000 - 98703],
       ["Flask", 44.9, 1.5, 100000, 80365, 100000 - 80365],
       ["Hono", 13.05, 2.02, 100000, 99279, 100000 - 99279],
-    ]
+    ];
 
 Highcharts.setOptions({
     chart: {
@@ -167,15 +167,7 @@ Highcharts.setOptions({
         enabled: false
     },
     tooltip: {
-        // useHTML: true,
         headerFormat: '► {point.x}<br />',
-        // formatter: function(tooltip) {
-        //   const ret = tooltip.defaultFormatter.call(this, tooltip);
-        //   //ret.unshift('<span class="highcharts-header"><img src="https://bun.sh/logo.svg" alt="bun" width="16" height="16"/></span>')
-        //   return '<img src="https://bun.sh/favicon.ico" />'
-        //   console.log(ret)
-        //   return ret
-        // },
     },
 });
 
@@ -348,7 +340,7 @@ Dashboards.board('container', {
     }]
 }, true);
 
-})
+});
 </script>
 
 
