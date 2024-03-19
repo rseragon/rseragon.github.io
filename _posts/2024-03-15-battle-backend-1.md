@@ -3,7 +3,7 @@ title: Battle of the Backends - 1
 date: 2024-03-15 10:00:03 +0530
 categories: [webdev]
 tags: [Bun, NodeJs, Java]
-image: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/million/dia/servers.png
+image: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/backend_battle/dia/servers.png
 ---
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -45,8 +45,8 @@ So, why not just stick to Java and call it a day. Why worry about all the new te
 This is where we fall in the pit. Java released in 1996, almost 28 years as of 2024. In 1996, the maximum amount of RAM a PC could hold 
 is around 4 GB[^32-bit], right now, with the advent of 64-bit processors the capacity has exponentially increased to 4PB[^64-bit].
 
-I would proclaim that solution built 3 decades ago aren't viable for problems that are present right now. So, to use a older paradigm 
-just because everyone is using it, is just like living in a delusion that an AI won't take over your job.
+I would proclaim that the solutions built 3 decades ago aren't viable for problems that are present right now. So, to use a older paradigm 
+just because everyone is using it, is just like living in a delusion that an AI won't take over your job!
 
 
 # Benching languages
@@ -59,7 +59,7 @@ For the comparision, I've taken these four tech stacks. The factors that made me
 4. **Hono       +  Bun**: Bun has been in quite the popularity now. It's super-fast runtime is one of the main reason I wanted to do this benchmark.
 
 But what about the other languages?
-Yes, languages like Golang, Rust are definitely an option. I'm just too time contrained to learn and deploy these languages. So, I put them on hold as of now, .
+Yes, languages like Golang, Rust are definitely an option. I'm just too time contrained to learn and deploy these languages. So, I put them on hold as of now.
 
 ## How to test them?
 The initial problem was how should I test them?<br />
@@ -68,7 +68,7 @@ thousands of logins at some instance of time, and if we were to bench that kind 
 on this heavy threshold.
 The Skeleton of the plan goes like this
 
-<img src="https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/million/dia/steps.png" />
+<img src="https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/backend_battle/dia/steps.png" />
 
 Wait. This has no corelation with the logic of logging in a user?!<br />
 If this is the query, then here is my answer. The first step, getting random bytes is analogous to retriving a hashed password from the server. The second step of generating
@@ -77,7 +77,7 @@ comparing two hashes, is something I've not implemented. Since it's an O(k) oper
 
 
 ## Implementation specifics
-Now, let's look into how I've implemented the logic in these languages. If you want to just look at the entier code, I've uploaded them into this [repo](https://github.com/rseragon/blog-assets/tree/main/million/prog/servers)
+Now, let's look into how I've implemented the logic in these languages. If you want to just look at the entier code, I've uploaded them into this [repo](https://github.com/rseragon/blog-assets/tree/main/backend_battle/prog/servers)
 
 ### SpringBoot
 ```java
@@ -93,6 +93,8 @@ Now, let's look into how I've implemented the logic in these languages. If you w
         return bytesToHex(encodedHash);
     }
 ```
+> - The `bytesToHex` function is a custom implementation taken from [Baeldung](https://www.baeldung.com/sha-256-hashing-java)
+> - I didn't wanna add extra exception handling, so I just let the program throw `NoSuchAlgorithmException` for `MessageDigest.getInstance`
 
 ### Flask
 ```python
@@ -101,6 +103,7 @@ def index():
     bytes = random.randbytes(100)
     return hashlib.sha256(bytes).hexdigest()
 ```
+> Simplicity at its best
 
 ### Hono
 ```js
@@ -124,6 +127,8 @@ app.get("/", (req, res) => {
   res.send(hash)
 })
 ```
+> Since Bun and Node running the same language, the code would be similar.
+
 
 ## Deployment
 To keep the evaluation fair, all of the applications have been deployed to AWS Elastic Beanstalk with the following Specifications.
@@ -139,11 +144,48 @@ Nodejs and Flask were an easy deployment. SpringBoot initially failed to work, b
 the default port, it started working like a charm. And Hono, for some reason AWS hated it. Even after depolying it via docker, it just refused to run it. At the end for hono,
 I had to manually SSH into the instance and rebuild the docker file to make it run.
 
+## The Server Slayer!
+To test these deployed server, I had to put them on intense work load. For this job, I've chosen Golang!
+This had two reason:
+1. To understand the power of GoRoutines
+2. To hit the deployed servers fast enough to break them
 
+The implementation of Server Slayer is as follows: 
+```go
+func main() {
 
+  if len(os.Args) < 2 {
+    fmt.Printf("Usage: %s URL\n", os.Args[0])
+    os.Exit(0)
+  }
+
+  var wg sync.WaitGroup
+
+  url := os.Args[1]
+  for i := 0; i < 100000; i++ {
+    wg.Add(1)
+    go makeHTTPRequest(url, i, &wg)
+
+    if i % 1000 == 0 {
+      time.Sleep(time.Second * 1)
+    }
+  }
+
+  wg.Wait()
+  fmt.Println("Finished!")
+}
+```
+The working of the main function is quite straightforward; It takes the URL argument
+from the command line, spawns a go routine of `makeHttpRequest` function for a 100k
+times and waits for all the requests to finish at the end. The extra of code of 
+sleeping for 1 seconds for every 1000th request was to give the Operating System
+some breathing time to ensure all the GoRoutines are instantiated.
+
+If you want to have a look at `makeHTTPRequest` function, feel free to check it [here](https://github.com/rseragon/blog-assets/blob/main/backend_battle/prog/requester/ServerSlayer.go).
 
 ## Results
-Time for the long awaited results. 
+Time for the long awaited results. All of the servers were tested for 100k requests 
+and the given graphs below are their metrics.
 
 <div id="container"></div>
 
@@ -357,7 +399,7 @@ That's the end of the chapter for testing. The main question I ask myself here i
 
 The answer isn't that simple. But, I give my conclusion as tree.
 
-<img src="https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/million/dia/decision_tree.svg" />
+<img src="https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/backend_battle/dia/decision_tree.svg" />
 
 
 ## Postscript

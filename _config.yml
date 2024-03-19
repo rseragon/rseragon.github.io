@@ -20,7 +20,7 @@ timezone: Asia/Kolkata
 # ↓ --------------------------
 # TODO
 
-title: Stygian Crypt # the main title
+title: Fortress of Wisdom # the main title
 
 tagline: Lo and behold, stranger bold!
   Abandon thy hope, seek answers in the pits of misery and dreams untold.
@@ -84,7 +84,7 @@ theme_mode:   # [light|dark]
 img_cdn: https://cdn.jsdelivr.net/gh/
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://avatars.githubusercontent.com/u/29054079
+avatar: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@main/public/icon.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true
