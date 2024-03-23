@@ -386,7 +386,7 @@ Dashboards.board('container', {
 </script>
 
 
-- To be honest, I'm not shocked. But, definitely imporessed by Hono + Bun. In the overall performance canvas, Bun outdoes
+- To be honest, I'm not shocked. But, definitely impressed by Hono + Bun. In the overall performance canvas, Bun outdoes
 the rest of them. But, nonetheless it took me a long time to deploy it on Beanstalk, which is one of it's major downfall.
 - On the other hand, I was taken back with the poor performance of python. I knew python was slow, but to perform this poorly
 was something I wasn't expecting. I expected that the problem was on my side and tried optimizing the `gunicorn` configuration
