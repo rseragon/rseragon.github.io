@@ -123,8 +123,26 @@
 }
 
 %text-highlight {
-  color: inherit;
+  color: var(--text-muted-highlight-color);
   font-weight: 600;
+}
+
+%text-sm {
+  font-size: 0.85rem;
+}
+
+%text-xs {
+  font-size: 0.8rem;
+}
+
+%sup-fn-target {
+  &:target {
+    background-color: var(--footnote-target-bg);
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    transition: background-color 1.75s ease-in-out;
+  }
 }
 
 /* ---------- scss mixin --------- */
@@ -169,7 +187,7 @@
   transform: translateX(-50%);
 }
 
-@mixin prompt($type, $fa-content, $fa-style: 'solid') {
+@mixin prompt($type, $fa-content, $fa-style: 'solid', $rotate: 0) {
   &.prompt-#{$type} {
     background-color: var(--prompt-#{$type}-bg);
 
@@ -177,6 +195,10 @@
       content: $fa-content;
       color: var(--prompt-#{$type}-icon-color);
       font: var(--fa-font-#{$fa-style});
+
+      @if $rotate != 0 {
+        transform: rotate(#{$rotate}deg);
+      }
     }
   }
 }

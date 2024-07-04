@@ -19,7 +19,7 @@ help() {
   echo
   echo "Usage:"
   echo
-  echo "   bash ./tools/test [options]"
+  echo "   bash $0 [options]"
   echo
   echo "Options:"
   echo '     -c, --config   "<config_a[,config_b[...]]>"    Specify config file(s)'
@@ -61,9 +61,9 @@ main() {
     -d "$SITE_DIR$_baseurl" -c "$_config"
 
   # test
-  # bundle exec htmlproofer "$SITE_DIR" \
-  #   --disable-external=true \
-  #   --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+  bundle exec htmlproofer "$SITE_DIR" \
+    --disable-external \
+    --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 }
 
 while (($#)); do
