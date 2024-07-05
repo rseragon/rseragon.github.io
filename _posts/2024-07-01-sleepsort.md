@@ -163,7 +163,7 @@ $$
   f(m) = {\sqrt m \over max (L)} = {\sqrt m \over m} = {1 \over \sqrt m}
 $$
 
-From this we can conclude, that the function, at it's worst case will sleep for atleast $$ {1 \over \sqrt m} $$ seconds.
+From this we can conclude, that the function, at it's worst case will sleep for at least $$ {1 \over \sqrt m} $$ seconds.
 
 And for the worst case scenario calculation, if all the elements in the list are maximum i.e. the list is made up of $$ n $$ elements with the value of $$ m $$ ($$ [m, m, m, ...(n)times] $$), then Big O notation for each element would be $$ O({ 1 \over \sqrt m}) $$.
 
