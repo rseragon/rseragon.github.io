@@ -181,7 +181,7 @@ This is the beauty of mathematics. That is because, if the denominator in the fr
 
 Now, if we consider the entire algorithm, there are two parts to it
 1. Find out the maximum number is $$ O(n) $$.
-2. Sleep for every number is $$ O(n \over \sqrt m) $$.
+2. Sleep for every number is $$ O({n \over \sqrt m}) $$.
 
 So, the worst case scenario would be 
 
