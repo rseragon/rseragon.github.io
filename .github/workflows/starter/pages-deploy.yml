@@ -2,7 +2,7 @@ name: "Build and Deploy"
 on:
   push:
     branches:
-      - master
+      - main
       - master
     paths-ignore:
       - .gitignore
@@ -42,13 +42,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-<<<<<<<< HEAD:.github/workflows/pages-deploy.yml
-          ruby-version: 3.1
-|||||||| f079bb7:.github/workflows/pages-deploy.yml.hook
-          ruby-version: 3
-========
           ruby-version: 3.3
->>>>>>>> a07a57ec922249d3a22da56fbcb30d83eadef728:.github/workflows/starter/pages-deploy.yml
           bundler-cache: true
 
       - name: Build site
@@ -56,22 +50,6 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
-<<<<<<<< HEAD:.github/workflows/pages-deploy.yml
-|||||||| f079bb7:.github/workflows/pages-deploy.yml.hook
-      - name: Test site
-        run: |
-          bundle exec htmlproofer _site \
-            \-\-disable-external=true \
-            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
-
-========
-      - name: Test site
-        run: |
-          bundle exec htmlproofer _site \
-            \-\-disable-external \
-            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
-
->>>>>>>> a07a57ec922249d3a22da56fbcb30d83eadef728:.github/workflows/starter/pages-deploy.yml
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
