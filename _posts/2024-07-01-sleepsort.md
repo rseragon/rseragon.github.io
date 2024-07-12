@@ -3,6 +3,7 @@ title: "SleepSort: The zenith of sorting algorithms"
 date: 2024-07-01 10:00:03 +0530
 categories: [Algorithms, beginner]
 tags: [Sleepsort, Algorithms]
+image: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@main/sleep-sort/anim/tanya_beyond_science.png
 ---
 
 <details>
