@@ -5,6 +5,7 @@ categories: [Algorithms, beginner]
 tags: [Sleepsort, Algorithms]
 image: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@main/sleep-sort/anim/tanya_beyond_science.png
 ---
+> Credits for image: Youjo Senki (Manga)
 
 <details>
 <summary>
@@ -198,7 +199,7 @@ $$
   Time Complexity =
 \begin{cases}
 O(n),  & \text{if $n$ > 1} \\
-O({n \over \sqrt m}), & \text{if $0 < n < 1$ }
+O({1 \over \sqrt m}), & \text{if $0 < m < 1$ }
 \end{cases}
 $$
 
