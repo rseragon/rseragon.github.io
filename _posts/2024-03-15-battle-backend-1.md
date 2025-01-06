@@ -6,13 +6,13 @@ tags: [Bun, NodeJs, Java]
 image: https://cdn.jsdelivr.net/gh/rseragon/blog-assets@master/backend_battle/dia/servers.png
 ---
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
-<script src="https://code.highcharts.com/dashboards/datagrid.js"></script>
-<script src="https://code.highcharts.com/dashboards/dashboards.js"></script>
-<script src="https://code.highcharts.com/dashboards/modules/layout.js"></script>
+<script src="https://code.highcharts.com/11.1/highcharts.js"></script>
+<script src="https://code.highcharts.com/11.1/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/11.1/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/11.1/modules/solid-gauge.js"></script>
+<script src="https://code.highcharts.com/dashboards/2.3/datagrid.js"></script>
+<script src="https://code.highcharts.com/dashboards/2.3/dashboards.js"></script>
+<script src="https://code.highcharts.com/dashboards/2.3/modules/layout.js"></script>
 <style type="text/css">
   @import url("https://code.highcharts.com/css/highcharts.css");
   @import url("https://code.highcharts.com/dashboards/css/dashboards.css");
